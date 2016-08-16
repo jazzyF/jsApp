@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <link rel="stylesheet" href="webjars/dojo/1.9.1/dijit/themes/claro/claro.css" />
+        <script>
+            dojoConfig = {
+                parseOnLoad: true,
+                packages: [ 
+                    {name: 'app', location: location.pathname + 'app' } 
+                ],
+                async: true
+            };
+        </script>
+        <script src="webjars/dojo/1.9.1/dojo/dojo.js"></script>
+        <script>
+            require(["dojo/parser", "app/views/First", "dojo/domReady!"], function(parser, First) {
+                parser.parse();
+            });
+        </script>
+    </head>
+    <body class='claro'>
+        <button>Hey, Hello!</button>
+        <div data-dojo-type='dijit/form/TextBox'></div>
+        <div data-dojo-type="app/views/First" data-dojo-props="title: 'Some Widget'"></div>
+    </body>
+</html>
